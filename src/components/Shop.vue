@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import GameCard from './GameCard'
 
   export default {
@@ -21,8 +22,11 @@ import GameCard from './GameCard'
     },
     data() { 
       return {
-        
+
       }
+    },
+    methods: {
+
     }
   }
 </script>

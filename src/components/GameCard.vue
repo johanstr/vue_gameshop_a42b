@@ -17,7 +17,9 @@
               </v-icon>
               Info
             </v-btn>
-            <v-btn color="success">
+            <v-btn 
+              @click="addToCart" 
+              color="success">
               <v-icon>
                 shopping_cart
               </v-icon>
@@ -42,6 +44,12 @@ export default {
       return {
         
       }
+    },
+    methods: {
+      addToCart() {
+        console.log('Toevoegen')
+      },
+      
     },
     created() {
       

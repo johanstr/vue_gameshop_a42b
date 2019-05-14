@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app @key:enter="pressedEnter">
     <v-toolbar app dark>
       <v-toolbar-title class="headline text-uppercase">
         <span>GameShop</span>        
@@ -44,7 +44,13 @@ export default {
         { id: 7, title: 'Prototype 2', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/prototype2.jpeg', price: 39.95 },
         { id: 8, title: 'Trine', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/trine.jpeg', price: 49.95 },
         { id: 9, title: 'Watch Dogs', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/watchdogs.jpeg', price: 19.95 }
-      ]
+      ],
+      cart: []
+    }
+  },
+  methods: {
+    pressedEnter() {
+      console.log('ENTER ingedrukt')
     }
   }
 }
