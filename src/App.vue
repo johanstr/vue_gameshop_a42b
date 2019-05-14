@@ -1,31 +1,51 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-toolbar app dark>
+      <v-toolbar-title class="headline text-uppercase">
+        <span>GameShop</span>        
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-badge right>
+        <template v-slot:badge>
+          <span>6</span>
+        </template>
+        <v-icon
+          large
+          color="grey lighten-1"
+        >
+          shopping_cart
+        </v-icon>
+      </v-badge>
+    </v-toolbar>
+
+    <v-content>
+      <Shop :games="games" />
+    </v-content>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+import Shop from '@/components/Shop'
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+export default {
+  name: 'App',
+  components: {
+    Shop
+  },
+  data () {
+    return {
+      games: [
+        { id: 1, title: 'Ryse', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/ryse.jpeg', price: 19.95 },
+        { id: 2, title: 'Amnesia', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/amnesia.jpeg', price: 29.95 },
+        { id: 3, title: 'Avatar', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/avatar.jpeg', price: 39.95 },
+        { id: 4, title: 'Horizon Zero Dawn', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/horizonzerodawn.jpeg', price: 39.95 },
+        { id: 5, title: 'Just cause 2', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/justcause.jpeg', price: 49.95 },
+        { id: 6, title: 'Project Cars', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/projectcars.jpeg', price: 29.95 },
+        { id: 7, title: 'Prototype 2', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/prototype2.jpeg', price: 39.95 },
+        { id: 8, title: 'Trine', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/trine.jpeg', price: 49.95 },
+        { id: 9, title: 'Watch Dogs', description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.', image: 'img/watchdogs.jpeg', price: 19.95 }
+      ]
+    }
+  }
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
